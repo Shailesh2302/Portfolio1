@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,9 +26,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-color relative overflow-x-hidden`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-color absolute overflow-x-hidden`}
       >
-        {/* Water Wave Animated Background */}
+        <Navbar />
         <div className="fixed inset-0 pointer-events-none z-0">
           <div className="absolute inset-0 opacity-30">
             <svg
@@ -37,7 +38,13 @@ export default function RootLayout({
               preserveAspectRatio="xMidYMid slice"
             >
               <defs>
-                <linearGradient id="waveGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <linearGradient
+                  id="waveGradient"
+                  x1="0%"
+                  y1="0%"
+                  x2="100%"
+                  y2="100%"
+                >
                   <stop offset="0%" stopColor="rgba(59, 130, 246, 0.1)" />
                   <stop offset="50%" stopColor="rgba(139, 92, 246, 0.05)" />
                   <stop offset="100%" stopColor="rgba(59, 130, 246, 0.1)" />
@@ -69,9 +76,7 @@ export default function RootLayout({
         </div>
 
         {/* Main Content */}
-        <div className="relative z-10">
-          {children}
-        </div>
+        <div className="relative z-10">{children}</div>
       </body>
     </html>
   );

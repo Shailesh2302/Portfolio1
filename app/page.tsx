@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className="gap-5">
       <Container>
-        <HeroSection />
+        <HeroSection/>
         <AnimatedLine />
         <Skills />
       </Container>
