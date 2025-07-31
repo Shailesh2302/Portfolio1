@@ -32,7 +32,9 @@ const Skills = () => {
           }
         }
       `}</style>
-      <h1 className="text-white text-3xl font-semibold pb-10">Skills and Technologies</h1>
+      <h1 className="text-white text-3xl font-semibold pb-10">
+        Skills and Technologies
+      </h1>
 
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
         {skills.map((skill, index) => (

@@ -2,7 +2,11 @@
 import React from "react";
 import { Button } from "./ui/button";
 
-const SkillButton = ({ name = "", className = "" }) => {
+type SkillButtonProps = React.ComponentProps<typeof Button> & {
+  name: string;
+};
+
+const SkillButton = ({ name, className = "", ...props }: SkillButtonProps) => {
   return (
     <Button
       className={`
@@ -24,6 +28,7 @@ const SkillButton = ({ name = "", className = "" }) => {
         hover:shadow-md
         active:scale-[0.98]
       `}
+      {...props}  // Allow passing style, onClick, etc.
     >
       {name}
     </Button>
