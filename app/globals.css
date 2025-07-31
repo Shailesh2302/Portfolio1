@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+
 /* Custom Variant for Dark Mode */
 @custom-variant dark (&:is(.dark *));
 
@@ -11,6 +12,7 @@
 
 .container {
   max-width: 80%;
+  padding-left: 60;
   margin: 0 auto;
 }
 
@@ -234,7 +236,11 @@
   left: 50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 60%);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.3) 0%,
+    transparent 60%
+  );
   transform: translate(-50%, -50%) scale(0);
   border-radius: 50%;
   animation: ripple-drop 3s infinite ease-in-out;
