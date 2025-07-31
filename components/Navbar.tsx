@@ -18,21 +18,26 @@ const Navbar = () => {
   );
 };
 
-const colorMap: Record<'red' | 'blue' | 'green', string> = {
+// Fixing colorMap with exact keys you're passing
+const colorMap: Record<
+  "blue-400" | "purple-400" | "green-400" | "pink-400",
+  string
+> = {
   "blue-400": "bg-blue-400",
   "purple-400": "bg-purple-400",
   "green-400": "bg-green-400",
   "pink-400": "bg-pink-400",
 };
 
+// Correctly typing color prop as keyof colorMap
 const NavLink = ({
   href,
   label,
-  color = "blue",
+  color = "blue-400",
 }: {
   href: string;
   label: string;
-  color?: string | undefined;
+  color?: keyof typeof colorMap;
 }) => {
   return (
     <Link
