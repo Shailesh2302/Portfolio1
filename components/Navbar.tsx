@@ -25,7 +25,15 @@ const colorMap = {
   "pink-400": "bg-pink-400",
 };
 
-const NavLink = ({ href, label, color }) => {
+const NavLink = ({
+  href,
+  label,
+  color,
+}: {
+  href: string;
+  label: string;
+  color?: string | undefined;
+}) => {
   return (
     <Link
       href={href}
