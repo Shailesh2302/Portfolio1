@@ -18,7 +18,7 @@ const Navbar = () => {
   );
 };
 
-const colorMap = {
+const colorMap: Record<'red' | 'blue' | 'green', string> = {
   "blue-400": "bg-blue-400",
   "purple-400": "bg-purple-400",
   "green-400": "bg-green-400",
@@ -28,7 +28,7 @@ const colorMap = {
 const NavLink = ({
   href,
   label,
-  color,
+  color = "blue",
 }: {
   href: string;
   label: string;
