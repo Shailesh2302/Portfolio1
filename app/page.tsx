@@ -1,6 +1,7 @@
 import AnimatedLine from "@/components/AnimatedLine";
 import HorizontalEducationTimeline from "@/components/careerTimeline";
 import Container from "@/components/Container";
+import Footer from "@/components/footer";
 import HeroSection from "@/components/herosection";
 import Project from "@/components/projects";
 import Skills from "@/components/Skills";
@@ -20,6 +21,8 @@ export default function Home() {
       <HorizontalEducationTimeline />
       <AnimatedLine />
       <Project />
+      <AnimatedLine />
+      <Footer />
     </div>
   );
 }

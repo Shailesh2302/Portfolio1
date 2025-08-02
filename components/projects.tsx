@@ -4,7 +4,7 @@ import React from "react";
 
 const Project = () => {
   return (
-    <div className="mt-10">
+    <div className="mt-10 mb-10">
       <div className="grid grid-cols-2 gap-4 mx-6">
         <div className="border rounded-2xl h-100">
           <div className="flex items-center px-3 pt-3 justify-center">

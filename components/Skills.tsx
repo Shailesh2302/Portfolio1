@@ -2,36 +2,44 @@
 import React from "react";
 import SkillButton from "./skillButton";
 
+import {
+  FaReact,
+  FaJs,
+  FaJava,
+  FaDatabase,
+  FaDocker,
+  FaAws,
+  FaCloudflare,
+  FaGitAlt,
+} from "react-icons/fa";
+import {
+  SiNextdotjs,
+  SiTypescript,
+  SiMongodb,
+  SiHackerrank,
+  SiNx,
+} from "react-icons/si";
+
 const Skills = () => {
   const skills = [
-    "Next.js",
-    "React.js",
-    "TypeScript",
-    "JavaScript",
-    "Java",
-    "SQL (Postgres)",
-    "MongoDB",
-    "Docker",
-    "AWS",
-    "Cloudflare",
-    "CI/CD",
-    "Git",
-    "DSA",
-    "Monorepo",
+    { name: "Next.js", icon: <SiNextdotjs color="#000" size={18} /> },
+    { name: "React.js", icon: <FaReact color="#61DBFB" size={18} /> },
+    { name: "TypeScript", icon: <SiTypescript color="#3178C6" size={18} /> },
+    { name: "JavaScript", icon: <FaJs color="#F0DB4F" size={18} /> },
+    { name: "Java", icon: <FaJava color="#007396" size={18} /> },
+    { name: "SQL (Postgres)", icon: <FaDatabase color="#336791" size={18} /> },
+    { name: "MongoDB", icon: <SiMongodb color="#47A248" size={18} /> },
+    { name: "Docker", icon: <FaDocker color="#0db7ed" size={18} /> },
+    { name: "AWS", icon: <FaAws color="#FF9900" size={18} /> },
+    { name: "Cloudflare", icon: <FaCloudflare color="#F38020" size={18} /> },
+    { name: "CI/CD" },
+    { name: "Git", icon: <FaGitAlt color="#F1502F" size={18} /> },
+    { name: "DSA", icon: <SiHackerrank color="#2EC866" size={18} /> },
+    { name: "Monorepo", icon: <SiNx color="#143055" size={18} /> },
   ];
 
   return (
     <section className="py-12">
-      <style jsx>{`
-        @keyframes shimmer {
-          0% {
-            background-position: -200% 0;
-          }
-          100% {
-            background-position: 200% 0;
-          }
-        }
-      `}</style>
       <h1 className="text-white text-3xl font-semibold pb-10">
         Skills and Technologies
       </h1>
@@ -40,25 +48,10 @@ const Skills = () => {
         {skills.map((skill, index) => (
           <SkillButton
             key={index}
-            name={skill}
-            className="
-              bg-[#191923]
-              hover:bg-[#242438]
-              border 
-              border-gray-700/50
-              hover:border-gray-600/70
-              text-white 
-              text-sm
-              font-normal
-              px-3 
-              py-2  
-              relative
-              overflow-hidden
-              transition-all 
-              duration-300
-              hover:scale-[1.02]
-              hover:shadow-lg
-              hover:shadow-blue-500/20
+            name={skill.name}
+            icon={skill.icon}
+            style={{ animationDelay: `${index * 100}ms` }}
+            className={`
               before:absolute
               before:bottom-0
               before:left-0
@@ -69,12 +62,11 @@ const Skills = () => {
               before:via-purple-500
               before:to-pink-500
               before:bg-[length:200%_100%]
-              before:animate-[shimmer_2s_ease-in-out_infinite]
+              before:animate-shimmer
               before:opacity-80
-            "
-            style={{
-              animationDelay: `${index * 100}ms`,
-            }}
+              relative
+              overflow-hidden
+            `}
           />
         ))}
       </div>

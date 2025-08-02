@@ -4,9 +4,10 @@ import { Button } from "./ui/button";
 
 type SkillButtonProps = React.ComponentProps<typeof Button> & {
   name: string;
+  icon?: React.ReactNode;
 };
 
-const SkillButton = ({ name, className = "", ...props }: SkillButtonProps) => {
+const SkillButton = ({ name, icon, className = "", ...props }: SkillButtonProps) => {
   return (
     <Button
       className={`
@@ -27,10 +28,12 @@ const SkillButton = ({ name, className = "", ...props }: SkillButtonProps) => {
         hover:scale-[1.02]
         hover:shadow-md
         active:scale-[0.98]
+        flex items-center gap-x-2
       `}
-      {...props}  // Allow passing style, onClick, etc.
+      {...props}
     >
-      {name}
+      <span className="shrink-0">{icon}</span>
+      <span className="truncate">{name}</span>
     </Button>
   );
 };
